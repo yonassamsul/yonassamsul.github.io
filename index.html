@@ -1,13 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Website Saya</title>
-    <script>(function(s){s.dataset.zone='11680215',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    </head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #2F8BD2;
+    --brand-dark: #1E6DAA;
+    --text: #1F2937;
+    --text-muted: #5B6472;
+    --bg: #F7F9FC;
+    --card-bg: #FFFFFF;
+    --border: #E3E8F0;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --text: #E8EAED;
+      --text-muted: #A0A8B4;
+      --bg: #12161C;
+      --card-bg: #1A1F27;
+      --border: #2A313C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --text: #E8EAED;
+    --text-muted: #A0A8B4;
+    --bg: #12161C;
+    --card-bg: #1A1F27;
+    --border: #2A313C;
+  }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    padding: 72px 24px 90px;
+    text-align: center;
+    color: #ffffff;
+    padding-top: calc(72px + env(safe-area-inset-top, 0px));
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    font-size: 34px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(24px, 5.5vw, 34px);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    opacity: 0.92;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: -48px auto 0;
+    padding: 0 20px 60px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin-bottom: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) h2 { color: #6FB8E8; }
+  }
+  :root[data-theme="dark"] h2 { color: #6FB8E8; }
+
+  p { color: var(--text); font-size: 15px; margin-bottom: 10px; }
+  p:last-child { margin-bottom: 0; }
+
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .service-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .service-item .icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .service-item .label {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+  .contact-row:last-child { border-bottom: none; }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--brand);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .contact-label { color: var(--text-muted); font-size: 12.5px; }
+  .contact-value { color: var(--text); font-weight: 500; }
+
+  footer {
+    text-align: center;
+    padding: 10px 20px 40px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 28px 22px; border-radius: 16px; }
+    .services { grid-template-columns: 1fr 1fr; gap: 10px; }
+  }
+</style>
+</head>
 <body>
-    <h1>Halo, Selamat Datang
-    <p></p>
+
+  <div class="hero">
+    <div class="avatar">👤</div>
+    <h1>Selamat Datang</h1>
+    <p>Terima kasih sudah berkunjung ke halaman ini.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Tentang</h2>
+      <p>Halaman ini dikelola sebagai bagian dari kegiatan pengembangan perangkat lunak secara umum, mencakup berbagai proyek digital kecil hingga menengah.</p>
+      <p>Fokus utama adalah membangun solusi yang sederhana, fungsional, dan bermanfaat bagi penggunanya.</p>
+    </div>
+
+    <div class="card">
+      <h2>Bidang yang Dikerjakan</h2>
+      <div class="services">
+        <div class="service-item">
+          <div class="icon">💻</div>
+          <div class="label">Pengembangan Aplikasi</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🎨</div>
+          <div class="label">Desain Antarmuka</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">⚙️</div>
+          <div class="label">Otomatisasi Proses</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">📄</div>
+          <div class="label">Dokumentasi Digital</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Kontak</h2>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">[ISI EMAIL ANDA]</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <div class="contact-label">Lokasi</div>
+          <div class="contact-value">Indonesia</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © <span id="year"></span> Seluruh hak dilindungi.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
-
-
